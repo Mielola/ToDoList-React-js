@@ -28,13 +28,9 @@ Untuk menggunakan web ini, ikuti langkah-langkah berikut:
 
 Kontribusi dalam bentuk pull request atau laporan bug sangat dihargai. Pastikan untuk membuka issue terlebih dahulu untuk membahas perubahan yang Anda inginkan.
 
-## Lisensi
-
-Proyek ini dilisensikan di bawah Lisensi MIT. Lihat [LICENSE](LICENSE) untuk informasi lebih lanjut.
-
 ## Penulis
 
-Dibuat oleh [Nama Anda]
+Dibuat oleh Muhammad Wildan Dhiya Ulhaq
 
 ## Terima Kasih
 
