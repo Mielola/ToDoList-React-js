@@ -49,7 +49,7 @@ export const Todo = () => {
 
   console.log(todos)
   return (
-    <div className='md:bg-[#144272] md:h-min md:text-white md:w-1/2 md:p-8 sm'>
+    <div className='bg-[#144272] h-min text-white w-[90%] p-8 md:w-2/3 lg:w-1/2'>
       <div className='mb-6'>
         <h2 className='font-bold text-2xl'>Catat Kepentingan mu</h2>
         <p className='mb-2'>Web ini dibuat untuk latihan saya belajar react</p>
