@@ -57,9 +57,9 @@ export const Todo = () => {
         </div>
         <FormTodo addTodos={addTodos} id={id} edit={edit} setEdit={setEdit}/>
         {edit === 'edit' && (<EditTodo id={id} todos={todos} saveData={saveData} setEdit={setEdit}/>)}
-        <div className=' mb-5 flex flex-col gap-2'>
+        {todos.length !== 0 && (<div className=' mb-5 flex flex-col gap-2'>
           <input type="text" className='outline-none text-black p-3 w-full rounded-sm' value={search} onChange={searchFilter} placeholder='Searching...'/>
-        </div>
+        </div>)}
         <div className='overflow-y-auto max-h-96'>
         {filterTodos.map((todo, index) => (
         <WrapperTodo key={index} id={todo.id} todo={todo} handleDelete={handleDelete} handleEdit={()  => {handleEdit(todo.id)}}/>))}
