@@ -3,6 +3,7 @@ import Delete from '../assets/image/delete.png'
 import Edit from '../assets/image/digital-controller.png'
 
 
+
 export const WrapperTodo = ({ id, todo, handleDelete, handleEdit }) => {
   return (
     <section className=''>
@@ -12,7 +13,7 @@ export const WrapperTodo = ({ id, todo, handleDelete, handleEdit }) => {
             <p className='text-xs'>{todo.time}</p>
         </div>
         <div className='flex gap-3'>
-            <img src={Edit} alt=""  onClick={()=>handleEdit()}/>
+            <img src={Edit} alt=""  onClick={()=>handleEdit()} className='hover:cursor-pointer'/>
             <img src={Delete} alt="" onClick={()=>handleDelete(id)} className='hover:cursor-pointer'/>
         </div>
       </div>

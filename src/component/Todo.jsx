@@ -7,6 +7,14 @@ export const Todo = () => {
   const [todos, setTodos] = useState([])
   const [id, setId] = useState(1)
   const [edit, setEdit] = useState('')
+  const [search, setSearch] = useState('')
+
+  // Search
+  const searchFilter = (e) => {
+    setSearch(e.target.value)
+  }
+
+  const filterTodos = todos.filter(todo => todo.text.toLowerCase().includes(search.toLowerCase()))
 
   // Create
   function addTodos(todo){
@@ -41,7 +49,7 @@ export const Todo = () => {
 
   console.log(todos)
   return (
-    <div className='bg-[#144272] h-min text-white w-1/2 p-8 md:w-2/3 sm:w-2/3'>
+    <div className='md:bg-[#144272] md:h-min md:text-white md:w-1/2 md:p-8 sm'>
       <div className='mb-6'>
         <h2 className='font-bold text-2xl'>Catat Kepentingan mu</h2>
         <p className='mb-2'>Web ini dibuat untuk latihan saya belajar react</p>
@@ -49,8 +57,11 @@ export const Todo = () => {
         </div>
         <FormTodo addTodos={addTodos} id={id} edit={edit} setEdit={setEdit}/>
         {edit === 'edit' && (<EditTodo id={id} todos={todos} saveData={saveData} setEdit={setEdit}/>)}
+        <div className=' mb-5 flex flex-col gap-2'>
+          <input type="text" className='outline-none text-black p-3 w-full rounded-sm' value={search} onChange={searchFilter} placeholder='Searching...'/>
+        </div>
         <div className='overflow-y-auto max-h-96'>
-        {todos.map((todo, index) => (
+        {filterTodos.map((todo, index) => (
         <WrapperTodo key={index} id={todo.id} todo={todo} handleDelete={handleDelete} handleEdit={()  => {handleEdit(todo.id)}}/>))}
         </div>
     </div>
